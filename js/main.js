@@ -17,12 +17,19 @@
     
     // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+        var scrollTop = $(this).scrollTop();
+        var navbar = $('.navbar');
+        var logo = navbar.find('.nav-icon');
+        
+        if (scrollTop > 45) {
+            navbar.addClass('sticky-top shadow-sm');
+            logo.attr('src', 'img/hexameta LOGO.png'); // Replace with the path to the updated logo image
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            navbar.removeClass('sticky-top shadow-sm');
+            logo.attr('src', 'img/hexameta LOGO1.png'); // Replace with the path to the default logo image
         }
     });
+    
     
     
     // Dropdown on mouse hover

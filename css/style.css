@@ -185,17 +185,14 @@ h6,
 .hero-header {
     background:
         url(../img/bg-dot.png),
-        url(../img/bg-dot.png),
-        url(../img/bg-round.png),
+      
         url(../img/bg-tree.png),
         url(../img/bg-bottom-hero.png);
     background-position:
-        10px 10px,
         bottom 190px right 10px,
-        left 55% top -1px,
         left 45% bottom -1px,
         center bottom -1px;
-    background-size: auto,auto,auto,auto,100% auto;
+    background-size: auto,auto,100% auto;
     background-repeat: no-repeat;
 }
 
