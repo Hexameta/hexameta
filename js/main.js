@@ -117,6 +117,33 @@
         })
         $(this).addClass("active");
     });
+
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        console.log(scroll);
+        $(".nav-item").each(function(index,element){
+            if(index == 0 && scroll < 700){
+                $(element).addClass("active");
+            }else if(index == 1 && scroll >= 700 && scroll <= 1200){
+                $(element).addClass("active");
+            }else if(index == 2 && scroll >= 1200 && scroll <= 2500){
+                $(element).addClass("active");
+            }
+            else if(index == 3 && scroll >= 2500 && scroll <= 3650){
+                $(element).addClass("active");
+            }
+            else if(index == 4 && scroll >= 3650 && scroll <= 4000){
+                $(element).addClass("active");
+            }
+            else if(index == 5 && scroll >= 4000){
+                $(element).addClass("active");
+            }
+            else{
+                $(element).removeClass("active");
+            }
+        })
+    });
     
 })(jQuery);
 
