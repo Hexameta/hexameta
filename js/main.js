@@ -30,7 +30,7 @@
         }
     });
     
-    
+   
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
@@ -109,6 +109,13 @@
         $(this).addClass('active');
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
+
+    $(".nav-item").on('click',function(){
+        $(".nav-item").each(function(index,element){
+            $(element).removeClass("active");
+        })
+        $(this).addClass("active");
     });
     
 })(jQuery);
