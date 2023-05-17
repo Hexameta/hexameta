@@ -10,56 +10,68 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
-    
+
     // Sticky Navbar
     $(window).scroll(function () {
         var scrollTop = $(this).scrollTop();
         var navbar = $('.navbar');
         var logo = navbar.find('.nav-icon');
-        
+        var width = $(window).width();
         if (scrollTop > 45) {
             navbar.addClass('sticky-top shadow-sm');
             logo.attr('src', 'img/hexameta LOGO.png'); // Replace with the path to the updated logo image
         } else {
             navbar.removeClass('sticky-top shadow-sm');
-            logo.attr('src', 'img/hexameta LOGO1.png'); // Replace with the path to the default logo image
+            logo.attr('src', 'img/hexameta LOGO1.png');
+            if (width < 990) {
+                logo.attr('src', 'img/hexameta LOGO.png');
+            } // Replace with the path to the default logo image
         }
     });
-    
-   
-    
+
+
+
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
-    $(window).on("load resize", function() {
+
+    $(window).on("load resize", function () {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
+                function () {
+                    const $this = $(this);
+                    $this.addClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "true");
+                    $this.find($dropdownMenu).addClass(showClass);
+                },
+                function () {
+                    const $this = $(this);
+                    $this.removeClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "false");
+                    $this.find($dropdownMenu).removeClass(showClass);
+                }
             );
         } else {
+            var navbar = $('.navbar');
+            var logo = navbar.find('.nav-icon');
+            var width = $(window).width();
+            if (width < 990) {
+                console.log(width);
+                logo.attr('src', 'img/hexameta LOGO.png');
+            }else{
+                logo.attr('src', 'img/hexameta LOGO1.png');
+            }
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -69,7 +81,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -83,17 +95,17 @@
         loop: true,
         center: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
@@ -108,11 +120,11 @@
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
 
-    $(".nav-item").on('click',function(){
-        $(".nav-item").each(function(index,element){
+    $(".nav-item").on('click', function () {
+        $(".nav-item").each(function (index, element) {
             $(element).removeClass("active");
         })
         $(this).addClass("active");
@@ -121,29 +133,28 @@
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        console.log(scroll);
-        $(".nav-item").each(function(index,element){
-            if(index == 0 && scroll < 700){
+        $(".nav-item").each(function (index, element) {
+            if (index == 0 && scroll < 700) {
                 $(element).addClass("active");
-            }else if(index == 1 && scroll >= 700 && scroll <= 1200){
+            } else if (index == 1 && scroll >= 700 && scroll <= 1200) {
                 $(element).addClass("active");
-            }else if(index == 2 && scroll >= 1200 && scroll <= 2500){
-                $(element).addClass("active");
-            }
-            else if(index == 3 && scroll >= 2500 && scroll <= 3650){
+            } else if (index == 2 && scroll >= 1200 && scroll <= 2500) {
                 $(element).addClass("active");
             }
-            else if(index == 4 && scroll >= 3650 && scroll <= 4000){
+            else if (index == 3 && scroll >= 2500 && scroll <= 3650) {
                 $(element).addClass("active");
             }
-            else if(index == 5 && scroll >= 4000){
+            else if (index == 4 && scroll >= 3650 && scroll <= 4000) {
                 $(element).addClass("active");
             }
-            else{
+            else if (index == 5 && scroll >= 4000) {
+                $(element).addClass("active");
+            }
+            else {
                 $(element).removeClass("active");
             }
         })
     });
-    
+
 })(jQuery);
 
