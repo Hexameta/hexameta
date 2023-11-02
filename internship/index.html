@@ -9,6 +9,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link href="../img/hexametaIcon.png" rel="icon">
     <link rel="stylesheet" href="style.css" />
     <title>Internship</title>
   </head>
@@ -214,7 +215,7 @@
           const data = new FormData(form);
           if (document.getElementById("mobile").value.length != 10) {
             document.getElementById("errormsg").innerHTML =
-              '<div class="alert alert-danger text-white" role="alert">Enter Valid mobile number</div>';
+              '<div class="alert alert-danger" role="alert">Enter Valid Mobile Number</div>';
             return;
           }
           document.getElementById("load").style.display = "flex";
