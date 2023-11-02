@@ -9,7 +9,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link href="../img/hexametaIcon.png" rel="icon">
+    <link href="../img/hexametaIcon.png" rel="icon" />
     <link rel="stylesheet" href="style.css" />
     <title>Internship</title>
   </head>
@@ -24,7 +24,9 @@
           src="../img/hexameta LOGO.png"
           alt="Logo"
         />
-        <p id="title" class="fs-1 text-center fw-bold m-0">Internship</p>
+        <p id="title" class="fs-1 text-center fw-bold m-0">
+          Internship Pre-Registration
+        </p>
         <p id="description" class="fs-5 text-center">
           Thank you for choosing internship with Hexameta Technologies
         </p>
@@ -36,6 +38,7 @@
           id="survey-form"
         >
           <div id="errormsg"></div>
+
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -86,10 +89,10 @@
                 <label>Domain</label>
                 <select id="domain" name="Domain" class="form-control" required>
                   <option disabled selected value>Select</option>
-                  <option value="Web">Web Development</option>
-                  <option value="App">App Development</option>
+                  <option value="Web Dev">Web Development</option>
+                  <option value="App Dev">App Development</option>
                   <option value="IoT">Arduino & IoT</option>
-                  <option value="UI & UX">UI & UX Designing</option>
+                  <option value="User Interface">UI Designing</option>
                   <option value="Graphics">Graphics Designing</option>
                 </select>
               </div>
@@ -153,7 +156,9 @@
           <div class="row">
             <div class="form-group">
               <div class="d-flex pe-2">
-                <label class="pe-2"><b>Do you have Laptop? </b></label>
+                <label class="pe-2 form-label"
+                  ><b>Do you have Laptop? </b></label
+                >
                 <div
                   class="custom-control custom-checkbox custom-control-inline pe-2"
                 >
@@ -161,7 +166,7 @@
                     type="radio"
                     class="custom-control-input"
                     name="Laptop"
-                    value="yes"
+                    value="YES"
                     id="yes"
                     checked
                   />
@@ -174,7 +179,7 @@
                     type="radio"
                     class="custom-control-input"
                     name="Laptop"
-                    value="no"
+                    value="NO"
                     id="no"
                   />
                   <label class="custom-control-label" for="no">No</label>
@@ -184,7 +189,24 @@
           </div>
 
           <div class="row">
-            <div class="col-md-4">
+            <div class="form-group">
+              <div class="col-md-12" id="ag">
+                <label for="agree" class="form-label fs-6"
+                  >I agree to the <a href="terms/">Terms & Conditions</a></label
+                >
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  name="Agree"
+                  value="Agreed"
+                  id="agree"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="d-grid gap-2">
               <button
                 type="submit"
                 id="submit"
@@ -214,8 +236,19 @@
           e.preventDefault();
           const data = new FormData(form);
           if (document.getElementById("mobile").value.length != 10) {
+            document.getElementById("title").scrollIntoView({
+              behavior: "smooth",
+            });
             document.getElementById("errormsg").innerHTML =
               '<div class="alert alert-danger" role="alert">Enter Valid Mobile Number</div>';
+            return;
+          }
+          if (!document.getElementById("agree").checked) {
+            document.getElementById("title").scrollIntoView({
+              behavior: "smooth",
+            });
+            document.getElementById("errormsg").innerHTML =
+              '<div class="alert alert-danger" role="alert">Please Agree to the Terms and Conditions</div>';
             return;
           }
           document.getElementById("load").style.display = "flex";
