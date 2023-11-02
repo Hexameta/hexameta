@@ -31,7 +31,8 @@
           Thank you for choosing internship with Hexameta Technologies
         </p>
       </header>
-      <div class="form-wrap">
+      <div class="form-wrap pt-4">
+        <!-- <p class="text-center fw-bold text-primary">All fields are mandatory & must be completed</p> -->
         <form
           method="POST"
           action="https://script.google.com/macros/s/AKfycbyLkqIHfDuTnWgIrYzpJ0em6f7bY0EDHYQR2KyzRvKqfUTbg-rmudSt-L0tWaQCFEmY/exec"
@@ -42,12 +43,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label id="name-label" for="name">Name</label>
+                <label id="name-label" class="fw-bold" for="name">Name</label>
                 <input
                   type="text"
                   name="Name"
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder="Enter your Name"
                   class="form-control"
                   required
                 />
@@ -55,15 +56,15 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label id="number-label" for="number"
-                  >Phone Number <small>(Whatsapp)</small></label
+                <label id="number-label" class="fw-bold" for="number"
+                  >Mobile Number <small>(Whatsapp)</small></label
                 >
                 <input
                   type="number"
                   name="Mobile"
                   id="mobile"
                   class="form-control"
-                  placeholder="Mobile"
+                  placeholder="Enter your WhatsApp number"
                   required
                 />
               </div>
@@ -73,12 +74,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label id="email-label" for="email">Email </label>
+                <label id="email-label" class="fw-bold" for="email">Email </label>
                 <input
                   type="email"
                   name="Email"
                   id="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your Email"
                   class="form-control"
                   required
                 />
@@ -86,9 +87,9 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Domain</label>
+                <label class="fw-bold">Domain</label>
                 <select id="domain" name="Domain" class="form-control" required>
-                  <option disabled selected value>Select</option>
+                  <option disabled selected value>Select Domain</option>
                   <option value="Web Dev">Web Development</option>
                   <option value="App Dev">App Development</option>
                   <option value="IoT">Arduino & IoT</option>
@@ -102,14 +103,14 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Department</label>
+                <label class="fw-bold">Department</label>
                 <select
                   id="department"
                   name="Department"
                   class="form-control"
                   required
                 >
-                  <option disabled selected value>Select</option>
+                  <option disabled selected value>Select Department</option>
                   <option value="BA Communicative English">
                     BA Communicative English
                   </option>
@@ -142,9 +143,9 @@
 
             <div class="col-md-6">
               <div class="form-group">
-                <label>Year</label>
+                <label class="fw-bold">Year</label>
                 <select id="Year" name="Year" class="form-control" required>
-                  <option disabled selected value>Select</option>
+                  <option disabled selected value>Select Year</option>
                   <option value="1">1<sup>st</sup></option>
                   <option value="2">2<sup>nd</sup></option>
                   <option value="3">3<sup>rd</sup></option>
@@ -154,9 +155,9 @@
           </div>
 
           <div class="row">
-            <div class="form-group">
-              <div class="d-flex pe-2">
-                <label class="pe-2 form-label"
+            <div class="col-md-6 mt-2">
+              <div class="d-flex">
+                <label class="pe-2 form-check-label"
                   ><b>Do you have Laptop? </b></label
                 >
                 <div
@@ -164,39 +165,36 @@
                 >
                   <input
                     type="radio"
-                    class="custom-control-input"
+                    class="form-check-input"
                     name="Laptop"
                     value="YES"
                     id="yes"
                     checked
                   />
-                  <label class="custom-control-label" for="yes">Yes</label>
+                  <label class="form-check-label fw-bold" for="yes">Yes</label>
                 </div>
                 <div
                   class="custom-control custom-checkbox custom-control-inline"
                 >
                   <input
                     type="radio"
-                    class="custom-control-input"
+                    class="form-check-input"
                     name="Laptop"
                     value="NO"
                     id="no"
                   />
-                  <label class="custom-control-label" for="no">No</label>
+                  <label class="form-check-label fw-bold" for="no">No</label>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="form-group">
-              <div class="col-md-12" id="ag">
-                <label for="agree" class="form-label fs-6"
-                  >I agree to the <a href="terms/">Terms & Conditions</a></label
+            <div class="col-md-6 mt-2">
+              <div class="form-check mb-4 fw-bold">
+                <label for="agree" class="form-check-label fs-6 pe-2"
+                  >I Accept The <a href="terms/">Terms & Conditions</a></label
                 >
                 <input
                   type="checkbox"
-                  class="custom-control-input"
+                  class="form-check-input"
                   name="Agree"
                   value="Agreed"
                   id="agree"
@@ -204,6 +202,12 @@
               </div>
             </div>
           </div>
+
+          <!-- <div class="row">
+            <div class="form-group">
+              
+            </div>
+          </div> -->
 
           <div class="row">
             <div class="d-grid gap-2">
