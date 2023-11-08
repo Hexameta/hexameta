@@ -18,17 +18,19 @@
     <div id="load" class="load"><span class="loader"></span></div>
     <div class="container">
       <header class="header">
-        <img
-          class="img-fluid rounded mx-auto d-block"
-          width="500rem"
-          src="../img/form-logo.png"
-          alt="Logo"
-        />
-        <p id="title" class="fs-1 text-center fw-bold m-0">
+        <a href="../internship/"
+          ><img
+            class="img-fluid rounded mx-auto d-block"
+            width="500rem"
+            src="../img/form-logo.png"
+            alt="Logo"
+          />
+        </a>
+        <p id="title" class="fs-1 text-center text-dark fw-bold m-0">
           Internship Pre-Registration
         </p>
-        <p id="description" class="fs-5 text-center">
-          Thank you for choosing internship with Hexameta Technologies
+        <p id="description" class="fs-4 text-center">
+          Thank you for choosing internship with <br> <span class="fw-bold fs-5 text-primary">HEXAMETA</span><span class="fw-bold fs-5 text-dark"> TECHNOLOGIES</span>
         </p>
       </header>
       <div class="form-wrap pt-4">
@@ -74,7 +76,9 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label id="email-label" class="fw-bold" for="email">Email </label>
+                <label id="email-label" class="fw-bold" for="email"
+                  >Email
+                </label>
                 <input
                   type="email"
                   name="Email"
@@ -88,13 +92,18 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="fw-bold">Domain</label>
-                <select id="domain" name="Domain" class="form-control p-3" required>
+                <select
+                  id="domain"
+                  name="Domain"
+                  class="form-control p-3"
+                  required
+                >
                   <option disabled selected value>Select Domain</option>
                   <option value="Web Dev">Web Development</option>
                   <option value="App Dev">App Development</option>
                   <option value="IoT">Arduino & IoT</option>
-                  <option value="User Interface">UI Designing</option>
-                  <option value="Graphics">Graphics Designing</option>
+                  <option value="UI-UX Design">UI/UX Designing</option>
+                  <option value="Graphics Design">Graphics Designing</option>
                 </select>
               </div>
             </div>
@@ -146,9 +155,9 @@
                 <label class="fw-bold">Year</label>
                 <select id="Year" name="Year" class="form-control" required>
                   <option disabled selected value>Select Year</option>
-                  <option value="1">1<sup>st</sup></option>
-                  <option value="2">2<sup>nd</sup></option>
-                  <option value="3">3<sup>rd</sup></option>
+                  <option value="1">1st</option>
+                  <option value="2">2nd</option>
+                  <option value="3">3rd</option>
                 </select>
               </div>
             </div>
@@ -157,9 +166,9 @@
           <div class="row">
             <div class="col-md-6 mt-2">
               <div class="d-flex">
-                <label class="pe-2 form-check-label"
-                  ><b>Do you have Laptop? </b></label
-                >
+                <label class="pe-2 form-check-label">
+                  <b>Do you have Laptop?</b>
+                </label>
                 <div
                   class="custom-control custom-checkbox custom-control-inline pe-2"
                 >
@@ -198,16 +207,11 @@
                   name="Agree"
                   value="Agreed"
                   id="agree"
+                  required
                 />
               </div>
             </div>
           </div>
-
-          <!-- <div class="row">
-            <div class="form-group">
-              
-            </div>
-          </div> -->
 
           <div class="row">
             <div class="d-grid gap-2">
